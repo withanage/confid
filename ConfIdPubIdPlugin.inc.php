@@ -7,7 +7,7 @@
  * Copyright (c) 2003-2021 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @class ConfIDPubIdPlugin
+ * @class ConfIdPubIdPlugin
  * @ingroup plugins_pubIds_doi
  *
  * @brief CONFID plugin class
@@ -157,7 +157,7 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		$userVars = $request->getUserVars();
 		$userVars['pubIdPlugIn'] = get_class($this);
 		// Clear object pub id
-		$linkActions['clearPubIdLinkActionDoi'] = new LinkAction(
+		$linkActions['clearPubIdLinkActionConfId'] = new LinkAction(
 			'clearPubId',
 			new RemoteActionConfirmationModal(
 				$request->getSession(),
@@ -173,18 +173,18 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 
 		if (is_a($pubObject, 'Issue')) {
 			// Clear issue objects pub ids
-			$linkActions['clearIssueObjectsPubIdsLinkActionDoi'] = new LinkAction(
+			$linkActions['clearIssueObjectsPubIdsLinkActionConfId'] = new LinkAction(
 				'clearObjectsPubIds',
 				new RemoteActionConfirmationModal(
 					$request->getSession(),
-					__('plugins.pubIds.confid.editor.clearIssueObjectsDoi.confirm'),
+					__('plugins.pubIds.confid.editor.clearIssueObjectsConfId.confirm'),
 					__('common.delete'),
 					$request->url(null, null, 'clearIssueObjectsPubIds', null, $userVars),
 					'modal_delete'
 				),
-				__('plugins.pubIds.confid.editor.clearIssueObjectsDoi'),
+				__('plugins.pubIds.confid.editor.clearIssueObjectsConfId'),
 				'delete',
-				__('plugins.pubIds.confid.editor.clearIssueObjectsDoi')
+				__('plugins.pubIds.confid.editor.clearIssueObjectsConfId')
 			);
 		}
 
@@ -305,9 +305,7 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		if (strpos($props['pub-id::confid'], $confidPrefix) !== 0) {
 			$doiErrors[] = __('plugins.pubIds.confid.editor.missingPrefix', ['confidPrefix' => $confidPrefix]);
 		}
-		if (!$this->checkDuplicate($props['pub-id::confid'], 'Publication', $submission->getId(), $contextId)) {
-			$doiErrors[] = $this->getNotUniqueErrorMsg();
-		}
+
 		if (!empty($doiErrors)) {
 			$errors['pub-id::confid'] = $doiErrors;
 		}

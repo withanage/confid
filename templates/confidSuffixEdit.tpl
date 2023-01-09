@@ -11,7 +11,8 @@
  *}
 
 {assign var=pubObjectType value=$pubIdPlugin->getPubObjectType($pubObject)}
-{assign var=enableObjectDoi value=$pubIdPlugin->getSetting($currentContext->getId(), "enable`$pubObjectType`ConfID")}
+{assign var=enableObjectDoi value=$pubIdPlugin->getSetting($currentContext->getId(), "enable`$pubObjectType`Doi")}
+
 {if $enableObjectDoi}
 	{assign var=storedPubId value=$pubObject->getStoredPubId($pubIdPlugin->getPubIdType())}
 	{fbvFormArea id="pubIdConfIDFormArea" class="border" title="plugins.pubIds.confid.editor.confid"}
@@ -39,7 +40,7 @@
 					{capture assign=assignedMessage}{translate key="plugins.pubIds.confid.editor.assigned" pubObjectType=$translatedObjectType}{/capture}
 					<p class="pkp_help">{$assignedMessage}</p>
 					{if !$formDisabled}
-						{include file="linkAction/linkAction.tpl" action=$clearPubIdLinkActionDoi contextId="publicIdentifiersForm"}
+						{include file="linkAction/linkAction.tpl" action=$clearPubIdLinkActionConfId contextId="publicIdentifiersForm"}
 					{/if}
 				</p>
 				{/fbvFormSection}
@@ -74,8 +75,8 @@
 			{assign var="formAreaTitle" value=""}
 		{/if}
 		{fbvFormArea id="pubIdConfIDFormArea" class="border" title=$formAreaTitle}
-			{fbvFormSection list="true" description="plugins.pubIds.confid.editor.clearIssueObjectsDoi.description"}
-				{include file="linkAction/linkAction.tpl" action=$clearIssueObjectsPubIdsLinkActionDoi contextId="publicIdentifiersForm"}
+			{fbvFormSection list="true" description="plugins.pubIds.confid.editor.clearIssueObjectsConfId.description"}
+				{include file="linkAction/linkAction.tpl" action=$clearIssueObjectsPubIdsLinkActionConfId contextId="publicIdentifiersForm"}
 			{/fbvFormSection}
 		{/fbvFormArea}
 	{/if}

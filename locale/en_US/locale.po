@@ -152,13 +152,13 @@ msgstr "Clear"
 msgid "plugins.pubIds.confid.editor.clearObjectsDoi.confirm"
 msgstr "Are you sure you wish to delete the existing CONFID?"
 
-msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi"
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId"
 msgstr "Clear Issue Objects ConfIDs"
 
-msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi.confirm"
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId.confirm"
 msgstr "Are you sure you wish to delete the existing issue objects ConfIDs?"
 
-msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi.description"
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId.description"
 msgstr "Use the following option to clear ConfIDs of all objects (articles and galleys) currently scheduled for this issue."
 
 msgid "plugins.pubIds.confid.editor.assignDoi"

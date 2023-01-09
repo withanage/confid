@@ -143,13 +143,13 @@ msgstr "CONFID entfernen"
 msgid "plugins.pubIds.confid.editor.clearObjectsDoi.confirm"
 msgstr "Sind Sie sicher, dass Sie den existierenden CONFID entfernen möchten?"
 
-msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi"
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId"
 msgstr "CONFID für die Objekte der Ausgabe entfernen"
 
-msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi.confirm"
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId.confirm"
 msgstr "Sind Sie sicher, dass Sie die CONFID der existierenden Objekte der Ausgabe entfernen möchten?"
 
-msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi.description"
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId.description"
 msgstr "Nutzen Sie die folgende Option, um die CONFID aller Objekte (Artikel und Fahnen), die momentan dieser Ausgabe zugeordnet sind, zu entfernen."
 
 msgid "plugins.pubIds.confid.editor.assignDoi"

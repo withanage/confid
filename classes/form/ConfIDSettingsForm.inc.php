@@ -32,12 +32,12 @@ class ConfIDSettingsForm extends Form {
 		return $this->_contextId;
 	}
 
-	/** @var ConfIDPubIdPlugin */
+	/** @var ConfIdPubIdPlugin */
 	var $_plugin;
 
 	/**
 	 * Get the plugin.
-	 * @return ConfIDPubIdPlugin
+	 * @return ConfIdPubIdPlugin
 	 */
 	function _getPlugin() {
 		return $this->_plugin;
@@ -49,7 +49,7 @@ class ConfIDSettingsForm extends Form {
 	//
 	/**
 	 * Constructor
-	 * @param $plugin ConfIDPubIdPlugin
+	 * @param $plugin ConfIdPubIdPlugin
 	 * @param $contextId integer
 	 */
 	function __construct($plugin, $contextId) {
@@ -110,6 +110,10 @@ class ConfIDSettingsForm extends Form {
 		$this->setData('pluginName', $plugin->getName());
 	}
 
+	function getName(){
+		return 'confid';
+	}
+
 
 	//
 	// Implement template methods from Form
@@ -154,7 +158,7 @@ class ConfIDSettingsForm extends Form {
 			'enablePublicationDoi' => 'bool',
 			'enableRepresentationDoi' => 'bool',
 			'confidPrefix' => 'string',
-			'confidSuffix' => 'string',
+			'pubid::confid' => 'string',
 			'confidIssueSuffixPattern' => 'string',
 			'confidPublicationSuffixPattern' => 'string',
 			'confidRepresentationSuffixPattern' => 'string',

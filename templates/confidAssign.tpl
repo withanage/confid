@@ -9,7 +9,7 @@
  *}
 
 {assign var=pubObjectType value=$pubIdPlugin->getPubObjectType($pubObject)}
-{assign var=enableObjectDoi value=$pubIdPlugin->getSetting($currentContext->getId(), "enable`$pubObjectType`ConfID")}
+{assign var=enableObjectDoi value=$pubIdPlugin->getSetting($currentContext->getId(), "enable`$pubObjectType`Doi")}
 {if $enableObjectDoi}
 	{fbvFormArea id="pubIdConfIDFormArea" class="border" title="plugins.pubIds.confid.editor.confid"}
 	{if $pubObject->getStoredPubId($pubIdPlugin->getPubIdType())}

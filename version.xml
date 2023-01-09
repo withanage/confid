@@ -13,7 +13,7 @@
 <version>
 	<application>confid</application>
 	<type>plugins.pubIds</type>
-	<release>1.0.0.0</release>
+	<release>1.0.0.1</release>
 	<date>2016-05-16</date>
 	<lazy-load>1</lazy-load>
 	<class>ConfIdPubIdPlugin</class>
