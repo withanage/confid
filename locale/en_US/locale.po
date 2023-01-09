@@ -1,0 +1,192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-09-30T06:56:48-07:00\n"
+"PO-Revision-Date: 2019-09-30T06:56:48-07:00\n"
+"Language: \n"
+
+msgid "plugins.pubIds.confid.displayName"
+msgstr "CONFID"
+
+msgid "plugins.pubIds.confid.description"
+msgstr "This plugin enables the assignment of the Digital Object Identifiers to issues, articles and galleys in OJS."
+
+msgid "plugins.pubIds.confid.readerDisplayName"
+msgstr "CONFID"
+
+msgid "plugins.pubIds.confid.manager.settings.description"
+msgstr "Please configure the CONFID plugin to be able to manage and use ConfIDs in OJS:"
+
+msgid "plugins.pubIds.confid.manager.settings.doiObjects"
+msgstr "Journal Content"
+
+msgid "plugins.pubIds.confid.manager.settings.doiObjectsRequired"
+msgstr "Please choose the objects ConfIDs should be assigned to."
+
+msgid "plugins.pubIds.confid.manager.settings.explainDois"
+msgstr "Please select the publishing objects that will have Digital Object Identifiers (CONFID) assigned:"
+
+msgid "plugins.pubIds.confid.manager.settings.enableIssueDoi"
+msgstr "Issues"
+
+msgid "plugins.pubIds.confid.manager.settings.enablePublicationDoi"
+msgstr "Articles"
+
+msgid "plugins.pubIds.confid.manager.settings.enableRepresentationDoi"
+msgstr "Galleys"
+
+msgid "plugins.pubIds.confid.manager.settings.confidPrefix"
+msgstr "CONFID Prefix"
+
+msgid "plugins.pubIds.confid.manager.settings.confidPrefix.description"
+msgstr "The CONFID Prefix is assigned by registration agencies (e.g. <a href=\"https://projects.tib.eu/confident/\" target=\"_new\">ConfIdent</a>) and is in the format 10.xxxx (e.g. 10.1234):"
+
+msgid "plugins.pubIds.confid.manager.settings.confidPrefixPattern"
+msgstr "The CONFID prefix is mandatory and must be in the form 10.xxxx."
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffix"
+msgstr "CONFID Suffix"
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffix.description"
+msgstr "A CONFID suffix can take any form, but must be unique among all publishing objects with the same CONFID prefix assigned:"
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffixPattern"
+msgstr "Use the pattern entered below to generate CONFID suffixes. Use %j for journal initials, %v for the volume number, %i for the issue number, %Y for the year, %a for the OJS article ID, %g for the OJS galley ID, %f for the OJS file ID, %p for the page number and %x for \"Custom Identifier\"."
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffixPattern.example"
+msgstr "For example, vol%viss%ipp%p could create a CONFID such as 10.1234/vol3iss2pp230"
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffixPattern.issues"
+msgstr "for issues"
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffixPattern.submissions"
+msgstr "for articles"
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffixPattern.representations"
+msgstr "for galleys"
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffixDefault"
+msgstr "Use default patterns."
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffixDefault.description"
+msgstr "%j.v%vi%i for issues<br />%j.v%vi%i.%a for articles<br />%j.v%vi%i.%a.g%g for galleys."
+
+msgid "plugins.pubIds.confid.manager.settings.confidSuffixCustomIdentifier"
+msgstr "Enter an individual CONFID suffix for each published item. You'll find an additional CONFID input field on each item's meta-data page."
+
+msgid "plugins.pubIds.confid.manager.settings.doiIssueSuffixPatternRequired"
+msgstr "Please enter the CONFID suffix pattern for issues."
+
+msgid "plugins.pubIds.confid.manager.settings.doiSubmissionSuffixPatternRequired"
+msgstr "Please enter the CONFID suffix pattern for articles."
+
+msgid "plugins.pubIds.confid.manager.settings.doiRepresentationSuffixPatternRequired"
+msgstr "Please enter the CONFID suffix pattern for galleys."
+
+msgid "plugins.pubIds.confid.manager.settings.doiReassign"
+msgstr "Reassign ConfIDs"
+
+msgid "plugins.pubIds.confid.manager.settings.doiReassign.description"
+msgstr "If you change your CONFID configuration, ConfIDs that have already been assigned will not be affected. Once the CONFID configuration is saved, use this button to clear all existing ConfIDs so that the new settings will take effect with existing objects."
+
+msgid "plugins.pubIds.confid.manager.settings.doiReassign.confirm"
+msgstr "Are you sure you wish to delete all existing ConfIDs?"
+
+msgid "plugins.pubIds.confid.manager.settings.doiAssignJournalWide"
+msgstr "Assign ConfIDs"
+
+msgid "plugins.pubIds.confid.manager.settings.doiAssignJournalWide.description"
+msgstr "Assign ConfIDs to all published journal objects that have not been assigned ConfIDs. This action can not be used with the individual suffix configuration. If you have modified the CONFID configuration above, please save your changes before initiating this action. Assigning ConfIDs may take a long time, depending on the number of published objects in the journal."
+
+msgid "plugins.pubIds.confid.manager.settings.doiAssignJournalWide.confirm"
+msgstr "Are you sure you wish to assign ConfIDs to all published objects that have not been assigned ConfIDs?"
+
+msgid "plugins.pubIds.confid.editor.confid"
+msgstr "CONFID"
+
+msgid "plugins.pubIds.confid.editor.confid.description"
+msgstr "The CONFID must begin with {$prefix}."
+
+msgid "plugins.pubIds.confid.editor.confid.assignDoi"
+msgstr "Assign"
+
+msgid "plugins.pubIds.confid.editor.doiObjectTypeIssue"
+msgstr "issue"
+
+msgid "plugins.pubIds.confid.editor.doiObjectTypeSubmission"
+msgstr "article"
+
+msgid "plugins.pubIds.confid.editor.doiObjectTypeRepresentation"
+msgstr "galley"
+
+msgid "plugins.pubIds.confid.editor.customSuffixMissing"
+msgstr "The CONFID cannot be assigned because the custom suffix is missing."
+
+msgid "plugins.pubIds.confid.editor.missingIssue"
+msgstr "You can not generate a CONFID until this publication has been assigned to an issue."
+
+msgid "plugins.pubIds.confid.editor.missingParts"
+msgstr "You can not generate a CONFID because one or more parts of the CONFID pattern are missing data. You may need to assign the publication to an issue, set a publisher ID or enter page numbers."
+
+msgid "plugins.pubIds.confid.editor.patternNotResolved"
+msgstr "The CONFID cannot be assigned because it contains an unresolved pattern."
+
+msgid "plugins.pubIds.confid.editor.canBeAssigned"
+msgstr "What you see is a preview of the CONFID. Select the checkbox and save the form to assign the CONFID."
+
+msgid "plugins.pubIds.confid.editor.assigned"
+msgstr "The CONFID is assigned to this {$pubObjectType}."
+
+msgid "plugins.pubIds.confid.editor.confidSuffixCustomIdentifierNotUnique"
+msgstr "The given CONFID suffix is already in use for another published item. Please enter a unique CONFID suffix for each item."
+
+msgid "plugins.pubIds.confid.editor.clearObjectsDoi"
+msgstr "Clear"
+
+msgid "plugins.pubIds.confid.editor.clearObjectsDoi.confirm"
+msgstr "Are you sure you wish to delete the existing CONFID?"
+
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi"
+msgstr "Clear Issue Objects ConfIDs"
+
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi.confirm"
+msgstr "Are you sure you wish to delete the existing issue objects ConfIDs?"
+
+msgid "plugins.pubIds.confid.editor.clearIssueObjectsDoi.description"
+msgstr "Use the following option to clear ConfIDs of all objects (articles and galleys) currently scheduled for this issue."
+
+msgid "plugins.pubIds.confid.editor.assignDoi"
+msgstr "Assign the CONFID {$pubId} to this {$pubObjectType}"
+
+msgid "plugins.pubIds.confid.editor.assignDoi.emptySuffix"
+msgstr "The CONFID cannot be assigned because the custom suffix is missing."
+
+msgid "plugins.pubIds.confid.editor.assignDoi.pattern"
+msgstr "The CONFID {$pubId} cannot be assigned because it contains an unresolved pattern."
+
+msgid "plugins.pubIds.confid.editor.assignDoi.assigned"
+msgstr "The CONFID {$pubId} has been assigned."
+
+msgid "plugins.pubIds.confid.editor.missingPrefix"
+msgstr "The CONFID must begin with {$confidPrefix}."
+
+msgid "plugins.pubIds.confid.editor.preview.publication"
+msgstr "The CONFID for this publication will be {$doi}."
+
+msgid "plugins.pubIds.confid.editor.preview.publication.none"
+msgstr "A CONFID has not been assigned to this publication."
+
+msgid "plugins.pubIds.confid.editor.preview.galleys"
+msgstr "Galley: {$galleyLabel}"
+
+msgid "plugins.pubIds.confid.editor.preview.objects"
+msgstr "Item"
+
+msgid "plugins.pubIds.confid.editor.noDoiAssigned"
+msgstr "No CONFID is assigned."
