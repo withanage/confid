@@ -24,7 +24,7 @@ msgid "plugins.pubIds.confid.manager.settings.description"
 msgstr "Please configure the Conference  Identifier plugin to be able to manage and use ConfIDs in OJS:"
 
 msgid "plugins.pubIds.confid.manager.settings.confidObjects"
-msgstr "Journal Content"
+msgstr "Conference Content"
 
 msgid "plugins.pubIds.confid.manager.settings.confidObjectsRequired"
 msgstr "Please choose the objects ConfIDs should be assigned to."
