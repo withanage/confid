@@ -45,7 +45,9 @@
     {fbvElement type="text" id="confidIssueSuffixPattern" value=$confidIssueSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.issues" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
     {/fbvFormSection}
     {/fbvFormArea}
-    {fbvFormArea id="confidReassignFormArea" title="plugins.pubIds.confid.manager.settings.confidReassign"}
+	{*
+    {fbvFormArea id="confidReassignFormArea" title="plugins.pubIds.confid.manager.settings.confidReassign" }
+
     {fbvFormSection}
 		<div class="instruct">{translate key="plugins.pubIds.confid.manager.settings.confidReassign.description"}</div>
         {include file="linkAction/linkAction.tpl" action=$clearConfIdPubIdsLinkAction contextId="confidSettingsForm"}
@@ -59,6 +61,7 @@
         {/fbvFormSection}
         {/fbvFormArea}
     {/if}
+*}
     {fbvFormButtons submitText="common.save"}
 </form>
 <p><span class="formRequired">{translate key="common.requiredField"}</span></p>
