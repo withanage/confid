@@ -6,9 +6,6 @@ import('lib.pkp.classes.form.Form');
 class ConfIDSettingsForm extends Form
 {
 
-	//
-	// Private properties
-	//
 
 	var $_contextId;
 	var $_plugin;
@@ -19,8 +16,6 @@ class ConfIDSettingsForm extends Form
 		$this->_plugin = $plugin;
 
 		parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
-
-		$form = $this;
 
 		$this->addCheck(new FormValidatorRegExp($this, 'confidPrefix', 'required', 'plugins.pubIds.confid.manager.settings.confidPrefixPattern', '/^10\.[0-9]{4,7}$/'));
 		$this->addCheck(new FormValidatorPost($this));
@@ -77,9 +72,6 @@ class ConfIDSettingsForm extends Form
 	}
 
 
-	//
-	// Implement template methods from Form
-	//
 
 	function _getPlugin()
 	{
