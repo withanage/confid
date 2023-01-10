@@ -8,7 +8,7 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class ConfIDSettingsForm
- * @ingroup plugins_pubIds_doi
+ * @ingroup plugins_pubIds_confid
  *
  * @brief Form for journal managers to setup CONFID plugin
  */
@@ -59,21 +59,21 @@ class ConfIDSettingsForm extends Form {
 		parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
 
 		$form = $this;
-		$this->addCheck(new FormValidatorCustom($this, 'confidObjects', 'required', 'plugins.pubIds.confid.manager.settings.doiObjectsRequired', function($enableIssueDoi) use ($form) {
+		$this->addCheck(new FormValidatorCustom($this, 'confidObjects', 'required', 'plugins.pubIds.confid.manager.settings.confidObjectsRequired', function($enableIssueDoi) use ($form) {
 			return $form->getData('enableIssueDoi') || $form->getData('enablePublicationDoi') || $form->getData('enableRepresentationDoi');
 		}));
 		$this->addCheck(new FormValidatorRegExp($this, 'confidPrefix', 'required', 'plugins.pubIds.confid.manager.settings.confidPrefixPattern', '/^10\.[0-9]{4,7}$/'));
 		/**
-		$this->addCheck(new FormValidatorCustom($this, 'confidIssueSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.doiIssueSuffixPatternRequired', function($doiIssueSuffixPattern) use ($form) {
-			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enableIssueDoi')) return $doiIssueSuffixPattern != '';
+		$this->addCheck(new FormValidatorCustom($this, 'confidIssueSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.confidIssueSuffixPatternRequired', function($confidIssueSuffixPattern) use ($form) {
+			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enableIssueDoi')) return $confidIssueSuffixPattern != '';
 			return true;
 		}));
-		$this->addCheck(new FormValidatorCustom($this, 'confidPublicationSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.doiPublicationSuffixPatternRequired', function($doiPublicationSuffixPattern) use ($form) {
-			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enablePublicationDoi')) return $doiPublicationSuffixPattern != '';
+		$this->addCheck(new FormValidatorCustom($this, 'confidPublicationSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.confidPublicationSuffixPatternRequired', function($confidPublicationSuffixPattern) use ($form) {
+			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enablePublicationDoi')) return $confidPublicationSuffixPattern != '';
 			return true;
 		}));
-		$this->addCheck(new FormValidatorCustom($this, 'confidRepresentationSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.doiRepresentationSuffixPatternRequired', function($doiRepresentationSuffixPattern) use ($form) {
-			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enableRepresentationDoi')) return $doiRepresentationSuffixPattern != '';
+		$this->addCheck(new FormValidatorCustom($this, 'confidRepresentationSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.confidRepresentationSuffixPatternRequired', function($confidRepresentationSuffixPattern) use ($form) {
+			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enableRepresentationDoi')) return $confidRepresentationSuffixPattern != '';
 			return true;
 		}));
 		 **/
@@ -87,24 +87,24 @@ class ConfIDSettingsForm extends Form {
 			'reassignConfIDs',
 			new RemoteActionConfirmationModal(
 				$request->getSession(),
-				__('plugins.pubIds.confid.manager.settings.doiReassign.confirm'),
+				__('plugins.pubIds.confid.manager.settings.confidReassign.confirm'),
 				__('common.delete'),
 				$request->url(null, null, 'manage', null, array('verb' => 'clearPubIds', 'plugin' => $plugin->getName(), 'category' => 'pubIds')),
 				'modal_delete'
 			),
-			__('plugins.pubIds.confid.manager.settings.doiReassign'),
+			__('plugins.pubIds.confid.manager.settings.confidReassign'),
 			'delete'
 		));
 		$this->setData('assignJournalWidePubIdsLinkAction', new LinkAction(
 			'assignConfIDs',
 			new RemoteActionConfirmationModal(
 				$request->getSession(),
-				__('plugins.pubIds.confid.manager.settings.doiAssignJournalWide.confirm'),
-				__('plugins.pubIds.confid.manager.settings.doiAssignJournalWide'),
+				__('plugins.pubIds.confid.manager.settings.confidAssignJournalWide.confirm'),
+				__('plugins.pubIds.confid.manager.settings.confidAssignJournalWide'),
 				$request->url(null, null, 'manage', null, array('verb' => 'assignPubIds', 'plugin' => $plugin->getName(), 'category' => 'pubIds')),
 				'modal_confirm'
 			),
-			__('plugins.pubIds.confid.manager.settings.doiAssignJournalWide'),
+			__('plugins.pubIds.confid.manager.settings.confidAssignJournalWide'),
 			'advance'
 		));
 		$this->setData('pluginName', $plugin->getName());

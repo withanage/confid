@@ -26,10 +26,10 @@ msgstr "CONFID"
 msgid "plugins.pubIds.confid.manager.settings.description"
 msgstr "Bitte konfigurieren Sie das CONFID-Plugin, damit Sie CONFID in OJS verwalten und benutzen können:"
 
-msgid "plugins.pubIds.confid.manager.settings.doiObjects"
+msgid "plugins.pubIds.confid.manager.settings.confidObjects"
 msgstr "Zeitschrifteninhalt"
 
-msgid "plugins.pubIds.confid.manager.settings.doiObjectsRequired"
+msgid "plugins.pubIds.confid.manager.settings.confidObjectsRequired"
 msgstr "Bitte wählen Sie, welchen Objekten CONFID zugewiesen werden sollen."
 
 msgid "plugins.pubIds.confid.manager.settings.explainDois"
@@ -83,43 +83,43 @@ msgstr "%j.v%vi%i für Ausgaben<br />%j.v%vi%i.%a für Artikel<br />%j.v%vi%i.%a
 msgid "plugins.pubIds.confid.manager.settings.confidSuffixCustomIdentifier"
 msgstr "Geben Sie einen individuellen CONFID-Suffix für jedes publizierte Element ein. Sie finden ein zusätzliches CONFID-Eingabefeld auf der Metadatenseite jedes Elements."
 
-msgid "plugins.pubIds.confid.manager.settings.doiIssueSuffixPatternRequired"
+msgid "plugins.pubIds.confid.manager.settings.confidIssueSuffixPatternRequired"
 msgstr "Bitte geben Sie das CONFID-Suffix-Muster für Ausgaben ein."
 
-msgid "plugins.pubIds.confid.manager.settings.doiSubmissionSuffixPatternRequired"
+msgid "plugins.pubIds.confid.manager.settings.confidSubmissionSuffixPatternRequired"
 msgstr "Bitte geben Sie das CONFID-Suffix-Muster für Artikel ein."
 
-msgid "plugins.pubIds.confid.manager.settings.doiRepresentationSuffixPatternRequired"
+msgid "plugins.pubIds.confid.manager.settings.confidRepresentationSuffixPatternRequired"
 msgstr "Bitte geben Sie das CONFID-Suffix-Muster für Fahnen ein."
 
-msgid "plugins.pubIds.confid.manager.settings.doiReassign"
+msgid "plugins.pubIds.confid.manager.settings.confidReassign"
 msgstr "CONFID neu zuweisen"
 
-msgid "plugins.pubIds.confid.manager.settings.doiReassign.description"
+msgid "plugins.pubIds.confid.manager.settings.confidReassign.description"
 msgstr "Wenn Sie Ihre CONFID-Konfiguration ändern, sind bereits vergebene CONFID nicht betroffen. Sobald die CONFID-Konfiguration gespeichert wird, nutzen Sie diesen Knopf, um alle existierenden CONFID zu löschen, so dass die neuen Einstellungen auch bereits existierende Objekte mit betreffen."
 
-msgid "plugins.pubIds.confid.manager.settings.doiReassign.confirm"
+msgid "plugins.pubIds.confid.manager.settings.confidReassign.confirm"
 msgstr "Sind Sie sicher, dass Sie alle existierenden CONFID löschen möchten?"
 
-msgid "plugins.pubIds.confid.manager.settings.doiAssignJournalWide"
+msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide"
 msgstr "CONFID zuweisen"
 
-msgid "plugins.pubIds.confid.manager.settings.doiAssignJournalWide.description"
+msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide.description"
 msgstr "ConfIDs an alle Journalobjekte zuweisen, denen bisher noch keine CONFID zugewiesen waren. Diese Aktion kann nicht mit einer individuellen Suffix-Konfiguration genutzt werden. Wenn Sie oben die CONFID-Konfiguration verändert haben, speichern Sie bitte Ihre Änderungen, bevor Sie diese Aktion ausführen. CONFID zuzuweisen kann eine Weile dauern, abhängig von der Anzahl im Journal publizierter Objekte."
 
-msgid "plugins.pubIds.confid.manager.settings.doiAssignJournalWide.confirm"
+msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide.confirm"
 msgstr "Sind Sie sicher, dass Sie allen veröffentlichten Objekten einen CONFID zuweisen möchten, die bisher noch keine CONFID zugewiesen bekommen haben?"
 
 msgid "plugins.pubIds.confid.editor.confid"
 msgstr "CONFID"
 
-msgid "plugins.pubIds.confid.editor.doiObjectTypeIssue"
+msgid "plugins.pubIds.confid.editor.confidObjectTypeIssue"
 msgstr "Ausgabe"
 
-msgid "plugins.pubIds.confid.editor.doiObjectTypeSubmission"
+msgid "plugins.pubIds.confid.editor.confidObjectTypeSubmission"
 msgstr "Artikel"
 
-msgid "plugins.pubIds.confid.editor.doiObjectTypeRepresentation"
+msgid "plugins.pubIds.confid.editor.confidObjectTypeRepresentation"
 msgstr "Fahne"
 
 msgid "plugins.pubIds.confid.editor.customSuffixMissing"
@@ -174,10 +174,10 @@ msgid "plugins.pubIds.confid.editor.preview.publication.none"
 msgstr "Dieser Publikation wurde keine CONFID zugeordnet."
 
 msgid "plugins.pubIds.confid.editor.preview.publication"
-msgstr "Die CONFID für diese Veröffentlichung wird {$doi} sein."
+msgstr "Die CONFID für diese Veröffentlichung wird {$confid} sein."
 
 msgid "plugins.pubIds.confid.editor.missingPrefix"
-msgstr "Die CONFID muss mit {$doiprefix} beginnen."
+msgstr "Die CONFID muss mit {$confidprefix} beginnen."
 
 msgid "plugins.pubIds.confid.editor.missingParts"
 msgstr ""

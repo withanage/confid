@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @defgroup plugins_pubIds_doi CONFID Pub ID Plugin
+ * @defgroup plugins_pubIds_confid CONFID Pub ID Plugin
  */
 
 /**
@@ -11,7 +11,7 @@
  * Copyright (c) 2003-2021 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @ingroup plugins_pubIds_doi
+ * @ingroup plugins_pubIds_confid
  * @brief Wrapper for CONFID plugin.
  *
  */

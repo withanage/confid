@@ -1,5 +1,5 @@
 /**
- * @defgroup plugins_pubIds_doi_js
+ * @defgroup plugins_pubIds_confid_js
  */
 /**
  * @file plugins/pubIds/confid/js/ConfIdSettingsFormHandler.js
@@ -9,7 +9,7 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class ConfIDSettingsFormHandler.js
- * @ingroup plugins_pubIds_doi_js
+ * @ingroup plugins_pubIds_confid_js
  *
  * @brief Handle the CONFID Settings form.
  */

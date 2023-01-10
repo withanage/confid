@@ -8,7 +8,7 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class ConfIdPubIdPlugin
- * @ingroup plugins_pubIds_doi
+ * @ingroup plugins_pubIds_confid
  *
  * @brief CONFID plugin class
  */
@@ -94,7 +94,7 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 	 * @copydoc PKPPubIdPlugin::getResolvingURL()
 	 */
 	function getResolvingURL($contextId, $pubId) {
-		return 'https://confid.org/'.$this->_doiURLEncode($pubId);
+		return 'https://confid.org/'.$this->_confidURLEncode($pubId);
 	}
 
 	/**
@@ -269,7 +269,7 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 	 * @param $pubId string
 	 * @return string
 	 */
-	function _doiURLEncode($pubId) {
+	function _confidURLEncode($pubId) {
 		$search = array ('%', '"', '#', ' ', '<', '>', '{');
 		$replace = array ('%25', '%22', '%23', '%20', '%3c', '%3e', '%7b');
 		$pubId = str_replace($search, $replace, $pubId);
@@ -301,13 +301,13 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		$contextId = $submission->getData('contextId');
 		$confidPrefix = $this->getSetting($contextId, 'confidPrefix');
 
-		$doiErrors = [];
+		$confidErrors = [];
 		if (strpos($props['pub-id::confid'], $confidPrefix) !== 0) {
-			$doiErrors[] = __('plugins.pubIds.confid.editor.missingPrefix', ['confidPrefix' => $confidPrefix]);
+			$confidErrors[] = __('plugins.pubIds.confid.editor.missingPrefix', ['confidPrefix' => $confidPrefix]);
 		}
 
-		if (!empty($doiErrors)) {
-			$errors['pub-id::confid'] = $doiErrors;
+		if (!empty($confidErrors)) {
+			$errors['pub-id::confid'] = $confidErrors;
 		}
 	}
 
@@ -467,30 +467,30 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 
 		// Show a table if more than one CONFID is going to be created
 		} else {
-			$doiTableRows = [];
+			$confidTableRows = [];
 			if ($publicationDoiEnabled) {
 				if ($form->publication->getData('pub-id::confid')) {
-					$doiTableRows[] = [$form->publication->getData('pub-id::confid'), 'Publication'];
+					$confidTableRows[] = [$form->publication->getData('pub-id::confid'), 'Publication'];
 				} else {
-					$doiTableRows[] = [$warningIconHtml . __('submission.status.unassigned'), 'Publication'];
+					$confidTableRows[] = [$warningIconHtml . __('submission.status.unassigned'), 'Publication'];
 				}
 			}
 			if ($galleyDoiEnabled) {
 				foreach ((array) $form->publication->getData('galleys') as $galley) {
 					if ($galley->getStoredPubId('confid')) {
-						$doiTableRows[] = [$galley->getStoredPubId('confid'), __('plugins.pubIds.confid.editor.preview.galleys', ['galleyLabel' => $galley->getGalleyLabel()])];
+						$confidTableRows[] = [$galley->getStoredPubId('confid'), __('plugins.pubIds.confid.editor.preview.galleys', ['galleyLabel' => $galley->getGalleyLabel()])];
 					} else {
-						$doiTableRows[] = [$warningIconHtml . __('submission.status.unassigned'),__('plugins.pubIds.confid.editor.preview.galleys', ['galleyLabel' => $galley->getGalleyLabel()])];
+						$confidTableRows[] = [$warningIconHtml . __('submission.status.unassigned'),__('plugins.pubIds.confid.editor.preview.galleys', ['galleyLabel' => $galley->getGalleyLabel()])];
 					}
 				}
 			}
-			if (!empty($doiTableRows)) {
+			if (!empty($confidTableRows)) {
 				$table = '<table class="pkpTable"><thead><tr>' .
 					'<th>' . __('plugins.pubIds.confid.editor.confid') . '</th>' .
 					'<th>' . __('plugins.pubIds.confid.editor.preview.objects') . '</th>' .
 					'</tr></thead><tbody>';
-				foreach ($doiTableRows as $doiTableRow) {
-					$table .= '<tr><td>' . $doiTableRow[0] . '</td><td>' . $doiTableRow[1] . '</td></tr>';
+				foreach ($confidTableRows as $confidTableRow) {
+					$table .= '<tr><td>' . $confidTableRow[0] . '</td><td>' . $confidTableRow[1] . '</td></tr>';
 				}
 				$table .= '</tbody></table>';
 			}

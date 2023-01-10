@@ -21,7 +21,7 @@
 <form class="pkp_form" id="confidSettingsForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT op="manage" category="pubIds" plugin=$pluginName verb="save"}">
 	{csrf}
 	{include file="common/formErrors.tpl"}
-	{fbvFormArea id="confidObjectsFormArea" title="plugins.pubIds.confid.manager.settings.doiObjects"}
+	{fbvFormArea id="confidObjectsFormArea" title="plugins.pubIds.confid.manager.settings.confidObjects"}
 		{fbvFormSection list="true"}
 			<p class="pkp_help">{translate key="plugins.pubIds.confid.manager.settings.explainDois"}</p>
 			{fbvElement type="checkbox" id="enableIssueDoi" label="plugins.pubIds.confid.manager.settings.enableIssueDoi" maxlength="40" checked=$enableIssueDoi|compare:true}
@@ -52,21 +52,21 @@
 		{fbvFormSection list="true"}
 			{fbvElement type="radio" id="confidSuffixPattern" name="confidSuffix" value="pattern" label="plugins.pubIds.confid.manager.settings.confidSuffixPattern" checked=$confidSuffix|compare:"pattern"}
 			<p class="pkp_help">{translate key="plugins.pubIds.confid.manager.settings.confidSuffixPattern.example"}</p>
-			{fbvElement type="text" id="confidIssueSuffixPattern" value=$doiIssueSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.issues" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
-			{fbvElement type="text" id="confidPublicationSuffixPattern" value=$doiPublicationSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.submissions" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
-			{fbvElement type="text" id="confidRepresentationSuffixPattern" value=$doiRepresentationSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.representations" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
+			{fbvElement type="text" id="confidIssueSuffixPattern" value=$confidIssueSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.issues" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
+			{fbvElement type="text" id="confidPublicationSuffixPattern" value=$confidPublicationSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.submissions" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
+			{fbvElement type="text" id="confidRepresentationSuffixPattern" value=$confidRepresentationSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.representations" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
 		{/fbvFormSection}
 	{/fbvFormArea}
-	{fbvFormArea id="confidReassignFormArea" title="plugins.pubIds.confid.manager.settings.doiReassign"}
+	{fbvFormArea id="confidReassignFormArea" title="plugins.pubIds.confid.manager.settings.confidReassign"}
 		{fbvFormSection}
-			<div class="instruct">{translate key="plugins.pubIds.confid.manager.settings.doiReassign.description"}</div>
+			<div class="instruct">{translate key="plugins.pubIds.confid.manager.settings.confidReassign.description"}</div>
 			{include file="linkAction/linkAction.tpl" action=$clearPubIdsLinkAction contextId="confidSettingsForm"}
 		{/fbvFormSection}
 	{/fbvFormArea}
 	{if ($enableIssueDoi || $enablePublicationDoi || $enableRepresentationDoi) && $confidPrefix && $confidSuffix && $confidSuffix != 'customId' }
-		{fbvFormArea id="confidAssignJournalWideFormArea" title="plugins.pubIds.confid.manager.settings.doiAssignJournalWide"}
+		{fbvFormArea id="confidAssignJournalWideFormArea" title="plugins.pubIds.confid.manager.settings.confidAssignJournalWide"}
 			{fbvFormSection}
-				<div class="instruct">{translate key="plugins.pubIds.confid.manager.settings.doiAssignJournalWide.description"}</div>
+				<div class="instruct">{translate key="plugins.pubIds.confid.manager.settings.confidAssignJournalWide.description"}</div>
 				{include file="linkAction/linkAction.tpl" action=$assignJournalWidePubIdsLinkAction contextId="confidSettingsForm"}
 			{/fbvFormSection}
 		{/fbvFormArea}

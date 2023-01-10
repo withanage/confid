@@ -36,7 +36,7 @@
 			{fbvFormSection}
 				<p>
 					{$storedPubId|escape}<br />
-					{capture assign=translatedObjectType}{translate key="plugins.pubIds.confid.editor.doiObjectType"|cat:$pubObjectType}{/capture}
+					{capture assign=translatedObjectType}{translate key="plugins.pubIds.confid.editor.confidObjectType"|cat:$pubObjectType}{/capture}
 					{capture assign=assignedMessage}{translate key="plugins.pubIds.confid.editor.assigned" pubObjectType=$translatedObjectType}{/capture}
 					<p class="pkp_help">{$assignedMessage}</p>
 					{if !$formDisabled}
