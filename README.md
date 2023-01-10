@@ -9,7 +9,7 @@
 - This plugin is available under PKP plugin gallery.
 
 ## Demo
-- See plugin in action https://user-images.githubusercontent.com/1921992/211665191-342ca54e-1f2f-4330-8b41-9da92eb5ed88.mp4
+- [See plugin in action](https://user-images.githubusercontent.com/1921992/211665191-342ca54e-1f2f-4330-8b41-9da92eb5ed88.mp4)
 
 ## For questions
 
