@@ -3,7 +3,7 @@ msgid "plugins.pubIds.confid.displayName"
 msgstr "Conference  Identifier"
 
 msgid "plugins.pubIds.confid.description"
-msgstr "Dieses Plugin ermöglicht die Zuweisung von ConfIDs (persistent identifiers) zu Ausgaben, Artikeln und Fahnen in OJS."
+msgstr "Dieses Plugin ermöglicht die Zuweisung von Conference Identifier (persistent identifiers) zu Ausgaben, Artikeln und Fahnen in OJS."
 
 msgid "plugins.pubIds.confid.readerDisplayName"
 msgstr "Conference  Identifier"
@@ -90,7 +90,7 @@ msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide"
 msgstr "Conference  Identifier zuweisen"
 
 msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide.description"
-msgstr "ConfIDs an alle Journalobjekte zuweisen, denen bisher noch keine Conference  Identifier zugewiesen waren. Diese Aktion kann nicht mit einer individuellen Suffix-Konfiguration genutzt werden. Wenn Sie oben die Conference  Identifier-Konfiguration verändert haben, speichern Sie bitte Ihre Änderungen, bevor Sie diese Aktion ausführen. Conference  Identifier zuzuweisen kann eine Weile dauern, abhängig von der Anzahl im Journal publizierter Objekte."
+msgstr "Conference  Identifier an alle Journalobjekte zuweisen, denen bisher noch keine Conference  Identifier zugewiesen waren. Diese Aktion kann nicht mit einer individuellen Suffix-Konfiguration genutzt werden. Wenn Sie oben die Conference  Identifier-Konfiguration verändert haben, speichern Sie bitte Ihre Änderungen, bevor Sie diese Aktion ausführen. Conference  Identifier zuzuweisen kann eine Weile dauern, abhängig von der Anzahl im Journal publizierter Objekte."
 
 msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide.confirm"
 msgstr "Sind Sie sicher, dass Sie allen veröffentlichten Objekten einen Conference  Identifier zuweisen möchten, die bisher noch keine Conference  Identifier zugewiesen bekommen haben?"

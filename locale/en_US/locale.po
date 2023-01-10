@@ -10,13 +10,13 @@ msgid "plugins.pubIds.confid.readerDisplayName"
 msgstr "Conference  Identifier"
 
 msgid "plugins.pubIds.confid.manager.settings.description"
-msgstr "Please configure the Conference  Identifier plugin to be able to manage and use ConfIDs in OJS:"
+msgstr "Please configure the Conference  Identifier plugin to be able to manage and use Conference  Identifier in OJS:"
 
 msgid "plugins.pubIds.confid.manager.settings.confidObjects"
-msgstr "Conference Content"
+msgstr ""
 
 msgid "plugins.pubIds.confid.manager.settings.confidObjectsRequired"
-msgstr "Please choose the objects ConfIDs should be assigned to."
+msgstr "Please choose the objects Conference Identifiers should be assigned to."
 
 msgid "plugins.pubIds.confid.manager.settings.explainDois"
 msgstr "Please select the publishing objects that will have Digital Object Identifiers (Conference  Identifier) assigned:"
@@ -79,22 +79,22 @@ msgid "plugins.pubIds.confid.manager.settings.confidRepresentationSuffixPatternR
 msgstr "Please enter the Conference  Identifier suffix pattern for galleys."
 
 msgid "plugins.pubIds.confid.manager.settings.confidReassign"
-msgstr "Reassign ConfIDs"
+msgstr "Reassign Conference  Identifier"
 
 msgid "plugins.pubIds.confid.manager.settings.confidReassign.description"
-msgstr "If you change your Conference  Identifier configuration, ConfIDs that have already been assigned will not be affected. Once the Conference  Identifier configuration is saved, use this button to clear all existing ConfIDs so that the new settings will take effect with existing objects."
+msgstr "If you change your Conference  Identifier configuration, Conference  Identifier that have already been assigned will not be affected. Once the Conference  Identifier configuration is saved, use this button to clear all existing Conference  Identifier so that the new settings will take effect with existing objects."
 
 msgid "plugins.pubIds.confid.manager.settings.confidReassign.confirm"
-msgstr "Are you sure you wish to delete all existing ConfIDs?"
+msgstr "Are you sure you wish to delete all existing Conference  Identifier?"
 
 msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide"
-msgstr "Assign ConfIDs"
+msgstr "Assign Conference  Identifier"
 
 msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide.description"
-msgstr "Assign ConfIDs to all published journal objects that have not been assigned ConfIDs. This action can not be used with the individual suffix configuration. If you have modified the Conference  Identifier configuration above, please save your changes before initiating this action. Assigning ConfIDs may take a long time, depending on the number of published objects in the journal."
+msgstr "Assign Conference  Identifier to all published journal objects that have not been assigned Conference  Identifier. This action can not be used with the individual suffix configuration. If you have modified the Conference  Identifier configuration above, please save your changes before initiating this action. Assigning Conference  Identifier may take a long time, depending on the number of published objects in the journal."
 
 msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide.confirm"
-msgstr "Are you sure you wish to assign ConfIDs to all published objects that have not been assigned ConfIDs?"
+msgstr "Are you sure you wish to assign Conference  Identifier to all published objects that have not been assigned Conference  Identifier?"
 
 msgid "plugins.pubIds.confid.editor.confid"
 msgstr "Conference  Identifier"
@@ -145,10 +145,10 @@ msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId"
 msgstr "Clear Issue Objects ConfIDs"
 
 msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId.confirm"
-msgstr "Are you sure you wish to delete the existing issue objects ConfIDs?"
+msgstr "Are you sure you wish to delete the existing issue objects Conference  Identifier?"
 
 msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId.description"
-msgstr "Use the following option to clear ConfIDs of all objects (articles and galleys) currently scheduled for this issue."
+msgstr "Use the following option to clear Conference  Identifier of all objects (articles and galleys) currently scheduled for this issue."
 
 msgid "plugins.pubIds.confid.editor.assignDoi"
 msgstr "Assign the Conference  Identifier {$pubId} to this {$pubObjectType}"
