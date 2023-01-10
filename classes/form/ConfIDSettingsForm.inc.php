@@ -1,52 +1,27 @@
 <?php
 
-/**
- * @file plugins/pubIds/confid/classes/form/ConfIDSettingsForm.inc.php
- *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2003-2021 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
- *
- * @class ConfIDSettingsForm
- * @ingroup plugins_pubIds_confid
- *
- * @brief Form for journal managers to setup CONFID plugin
- */
-
 
 import('lib.pkp.classes.form.Form');
 
-class ConfIDSettingsForm extends Form {
+class ConfIDSettingsForm extends Form
+{
 
 	//
 	// Private properties
 	//
 
 	var $_contextId;
-
-	function _getContextId() {
-		return $this->_contextId;
-	}
-
-
 	var $_plugin;
 
-	function _getPlugin() {
-		return $this->_plugin;
-	}
-
-
-	//
-	// Constructor
-	//
-	function __construct($plugin, $contextId) {
+	function __construct($plugin, $contextId)
+	{
 		$this->_contextId = $contextId;
 		$this->_plugin = $plugin;
 
 		parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
 
 		$form = $this;
-		$this->addCheck(new FormValidatorCustom($this, 'confidObjects', 'required', 'plugins.pubIds.confid.manager.settings.confidObjectsRequired', function($enableIssueDoi) use ($form) {
+		$this->addCheck(new FormValidatorCustom($this, 'confidObjects', 'required', 'plugins.pubIds.confid.manager.settings.confidObjectsRequired', function ($enableIssueDoi) use ($form) {
 			return $form->getData('enableIssueDoi') || $form->getData('enablePublicationDoi') || $form->getData('enableRepresentationDoi');
 		}));
 		$this->addCheck(new FormValidatorRegExp($this, 'confidPrefix', 'required', 'plugins.pubIds.confid.manager.settings.confidPrefixPattern', '/^10\.[0-9]{4,7}$/'));
@@ -83,40 +58,42 @@ class ConfIDSettingsForm extends Form {
 		$this->setData('pluginName', $plugin->getName());
 	}
 
-	function getName(){
+	function getName()
+	{
 		return 'confid';
+	}
+
+
+	//
+	// Constructor
+	//
+
+	function initData()
+	{
+		$contextId = $this->_getContextId();
+		$plugin = $this->_getPlugin();
+		foreach ($this->_getFormFields() as $fieldName => $fieldType) {
+			$this->setData($fieldName, $plugin->getSetting($contextId, $fieldName));
+		}
+	}
+
+	function _getContextId()
+	{
+		return $this->_contextId;
 	}
 
 
 	//
 	// Implement template methods from Form
 	//
-	function initData() {
-		$contextId = $this->_getContextId();
-		$plugin = $this->_getPlugin();
-		foreach($this->_getFormFields() as $fieldName => $fieldType) {
-			$this->setData($fieldName, $plugin->getSetting($contextId, $fieldName));
-		}
+
+	function _getPlugin()
+	{
+		return $this->_plugin;
 	}
 
-	function readInputData() {
-		$this->readUserVars(array_keys($this->_getFormFields()));
-	}
-
-	function execute(...$functionArgs) {
-		$plugin = $this->_getPlugin();
-		$contextId = $this->_getContextId();
-		foreach($this->_getFormFields() as $fieldName => $fieldType) {
-			$plugin->updateSetting($contextId, $fieldName, $this->getData($fieldName), $fieldType);
-		}
-		parent::execute(...$functionArgs);
-	}
-
-
-	//
-	// Private helper methods
-	//
-	function _getFormFields() {
+	function _getFormFields()
+	{
 		return array(
 			'enableIssueDoi' => 'bool',
 			'enablePublicationDoi' => 'bool',
@@ -127,6 +104,26 @@ class ConfIDSettingsForm extends Form {
 			'confidPublicationSuffixPattern' => 'string',
 			'confidRepresentationSuffixPattern' => 'string',
 		);
+	}
+
+	function readInputData()
+	{
+		$this->readUserVars(array_keys($this->_getFormFields()));
+	}
+
+
+	//
+	// Private helper methods
+	//
+
+	function execute(...$functionArgs)
+	{
+		$plugin = $this->_getPlugin();
+		$contextId = $this->_getContextId();
+		foreach ($this->_getFormFields() as $fieldName => $fieldType) {
+			$plugin->updateSetting($contextId, $fieldName, $this->getData($fieldName), $fieldType);
+		}
+		parent::execute(...$functionArgs);
 	}
 }
 

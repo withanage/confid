@@ -1,23 +1,17 @@
 <?php
 
-/**
- * @file plugins/pubIds/confid/ConfIdPubIdPlugin.inc.php
- *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2003-2021 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
- *
- * @class ConfIdPubIdPlugin
- * @ingroup plugins_pubIds_confid
- *
- * @brief CONFID plugin class
- */
+
+use PKP\components\forms\FieldHTML;
+use PKP\components\forms\FieldPubId;
+use PKP\components\forms\FieldText;
 
 import('classes.plugins.PubIdPlugin');
 
-class ConfIdPubIdPlugin extends PubIdPlugin {
+class ConfIdPubIdPlugin extends PubIdPlugin
+{
 
-	public function register($category, $path, $mainContextId = null) {
+	public function register($category, $path, $mainContextId = null)
+	{
 		$success = parent::register($category, $path, $mainContextId);
 		if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return $success;
 		if ($success && $this->getEnabled($mainContextId)) {
@@ -38,71 +32,83 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		return $success;
 	}
 
-	//
-	// Implement template methods from Plugin.
-	//
-	function getDisplayName() {
+
+	function getDisplayName()
+	{
 		return __('plugins.pubIds.confid.displayName');
 	}
 
-	function getDescription() {
+	function getDescription()
+	{
 		return __('plugins.pubIds.confid.description');
 	}
 
-
-	//
-	// Implement template methods from PubIdPlugin.
-	//
-	function constructPubId($pubIdPrefix, $pubIdSuffix, $contextId) {
+	function constructPubId($pubIdPrefix, $pubIdSuffix, $contextId)
+	{
 		return $pubIdPrefix . '/' . $pubIdSuffix;
 	}
 
-	function getPubIdType() {
-		return 'confid';
-	}
-
-	function getPubIdDisplayType() {
+	function getPubIdDisplayType()
+	{
 		return 'CONFID';
 	}
 
-	function getPubIdFullName() {
+	function getPubIdFullName()
+	{
 		return 'Digital Object Identifier';
 	}
 
-	function getResolvingURL($contextId, $pubId) {
-		return 'https://confid.org/'.$this->_confidURLEncode($pubId);
+	function getResolvingURL($contextId, $pubId)
+	{
+		return 'https://confid.org/' . $this->_confidURLEncode($pubId);
 	}
 
-	function getPubIdMetadataFile() {
+	function _confidURLEncode($pubId)
+	{
+		$search = array('%', '"', '#', ' ', '<', '>', '{');
+		$replace = array('%25', '%22', '%23', '%20', '%3c', '%3e', '%7b');
+		$pubId = str_replace($search, $replace, $pubId);
+		return $pubId;
+	}
+
+	function getPubIdMetadataFile()
+	{
 		return $this->getTemplateResource('confidSuffixEdit.tpl');
 	}
 
-	function getPubIdAssignFile() {
+	function getPubIdAssignFile()
+	{
 		return $this->getTemplateResource('confidAssign.tpl');
 	}
 
-	function instantiateSettingsForm($contextId) {
+	function instantiateSettingsForm($contextId)
+	{
 		$this->import('classes.form.ConfIDSettingsForm');
 		return new ConfIDSettingsForm($this, $contextId);
 	}
 
-	function getFormFieldNames() {
+	function getFormFieldNames()
+	{
 		return array('confidSuffix');
 	}
 
-	function getAssignFormFieldName() {
+	function getAssignFormFieldName()
+	{
 		return 'assignDoi';
 	}
 
-	function getPrefixFieldName() {
+	function getPrefixFieldName()
+	{
 		return 'confidPrefix';
 	}
 
-	function getSuffixFieldName() {
+	function getSuffixFieldName()
+	{
 		return 'confidSuffix';
 	}
 
-	function getLinkActions($pubObject) {
+	function getLinkActions($pubObject)
+	{
 		$linkActions = array();
 		import('lib.pkp.classes.linkAction.request.RemoteActionConfirmationModal');
 		$request = Application::get()->getRequest();
@@ -143,31 +149,37 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		return $linkActions;
 	}
 
-	function getSuffixPatternsFieldNames() {
-		return  array(
+	function getSuffixPatternsFieldNames()
+	{
+		return array(
 			'Issue' => 'confidIssueSuffixPattern',
 			'Publication' => 'confidPublicationSuffixPattern',
 			'Representation' => 'confidRepresentationSuffixPattern'
 		);
 	}
 
-	function getDAOFieldNames() {
+	function getDAOFieldNames()
+	{
 		return array('pub-id::confid');
 	}
 
-	function isObjectTypeEnabled($pubObjectType, $contextId) {
-		return (boolean) $this->getSetting($contextId, "enable${pubObjectType}Doi");
+	function isObjectTypeEnabled($pubObjectType, $contextId)
+	{
+		return (boolean)$this->getSetting($contextId, "enable${pubObjectType}Doi");
 	}
 
-	function getNotUniqueErrorMsg() {
+	function getNotUniqueErrorMsg()
+	{
 		return __('plugins.pubIds.confid.editor.confidSuffixCustomIdentifierNotUnique');
 	}
 
-	function validatePubId($pubId) {
+	function validatePubId($pubId)
+	{
 		return preg_match('/^\d+(.\d+)+\//', $pubId);
 	}
 
-	public function getCitationData($hookname, $args) {
+	public function getCitationData($hookname, $args)
+	{
 		$citationData = $args[0];
 		$article = $args[2];
 		$issue = $args[3];
@@ -186,20 +198,13 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		$citationData->CONFID = $pubId;
 	}
 
-
-	/**
-	 * Encode CONFID according to ANSI/NISO Z39.84-2005, Appendix E.
-	 * @param $pubId string
-	 * @return string
-	 */
-	function _confidURLEncode($pubId) {
-		$search = array ('%', '"', '#', ' ', '<', '>', '{');
-		$replace = array ('%25', '%22', '%23', '%20', '%3c', '%3e', '%7b');
-		$pubId = str_replace($search, $replace, $pubId);
-		return $pubId;
+	function getPubIdType()
+	{
+		return 'confid';
 	}
 
-	public function validatePublicationDoi($hookName, $args) {
+	public function validatePublicationDoi($hookName, $args)
+	{
 		$errors =& $args[0];
 		$action = $args[1];
 		$props =& $args[2];
@@ -228,26 +233,16 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		}
 	}
 
-	public function modifyObjectProperties($hookName, $args) {
+	public function modifyObjectProperties($hookName, $args)
+	{
 		$props =& $args[0];
 
 		$props[] = 'pub-id::confid';
 	}
 
-	/**
-	 * Add CONFID submission, issue or galley values
-	 *
-	 * @param $hookName string <Object>::getProperties::values
-	 * @param $args array [
-	 * 		@option $values array Key/value store of property values
-	 * 		@option $object Submission|Issue|Galley
-	 * 		@option $props array Requested properties
-	 * 		@option $args array Request args
-	 * ]
-	 *
-	 * @return array
-	 */
-	public function modifyObjectPropertyValues($hookName, $args) {
+
+	public function modifyObjectPropertyValues($hookName, $args)
+	{
 		$values =& $args[0];
 		$object = $args[1];
 		$props = $args[2];
@@ -268,7 +263,8 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		}
 	}
 
-	public function addPublicationFormFields($hookName, $form) {
+	public function addPublicationFormFields($hookName, $form)
+	{
 
 		if ($form->id !== 'publicationIdentifiers') {
 			return;
@@ -290,7 +286,7 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 
 		// Add a text field to enter the CONFID if no pattern exists
 		if (!$pattern) {
-			$form->addField(new \PKP\components\forms\FieldText('pub-id::confid', [
+			$form->addField(new FieldText('pub-id::confid', [
 				'label' => __('metadata.property.displayName.confid'),
 				'description' => __('plugins.pubIds.confid.editor.confid.description', ['prefix' => $prefix]),
 				'value' => $form->publication->getData('pub-id::confid'),
@@ -323,14 +319,15 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 			}
 			if ($suffixType === 'default') {
 				$fieldData['missingPartsLabel'] = __('plugins.pubIds.confid.editor.missingIssue');
-			} else  {
+			} else {
 				$fieldData['missingPartsLabel'] = __('plugins.pubIds.confid.editor.missingParts');
 			}
-			$form->addField(new \PKP\components\forms\FieldPubId('pub-id::confid', $fieldData));
+			$form->addField(new FieldPubId('pub-id::confid', $fieldData));
 		}
 	}
 
-	public function addPublishFormNotice($hookName, $form) {
+	public function addPublishFormNotice($hookName, $form)
+	{
 
 		if ($form->id !== 'publish' || !empty($form->errors)) {
 			return;
@@ -344,20 +341,20 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 		if (!$publicationDoiEnabled && !$galleyDoiEnabled) {
 			return;
 
-		// Use a simplified view when only assigning to the publication
+			// Use a simplified view when only assigning to the publication
 		} else if (!$galleyDoiEnabled) {
 			if ($form->publication->getData('pub-id::confid')) {
 				$msg = __('plugins.pubIds.confid.editor.preview.publication', ['confid' => $form->publication->getData('pub-id::confid')]);
 			} else {
 				$msg = '<div class="pkpNotification pkpNotification--warning">' . $warningIconHtml . __('plugins.pubIds.confid.editor.preview.publication.none') . '</div>';
 			}
-			$form->addField(new \PKP\components\forms\FieldHTML('confid', [
+			$form->addField(new FieldHTML('confid', [
 				'description' => $msg,
 				'groupId' => 'default',
 			]));
 			return;
 
-		// Show a table if more than one CONFID is going to be created
+			// Show a table if more than one CONFID is going to be created
 		} else {
 			$confidTableRows = [];
 			if ($publicationDoiEnabled) {
@@ -368,11 +365,11 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 				}
 			}
 			if ($galleyDoiEnabled) {
-				foreach ((array) $form->publication->getData('galleys') as $galley) {
+				foreach ((array)$form->publication->getData('galleys') as $galley) {
 					if ($galley->getStoredPubId('confid')) {
 						$confidTableRows[] = [$galley->getStoredPubId('confid'), __('plugins.pubIds.confid.editor.preview.galleys', ['galleyLabel' => $galley->getGalleyLabel()])];
 					} else {
-						$confidTableRows[] = [$warningIconHtml . __('submission.status.unassigned'),__('plugins.pubIds.confid.editor.preview.galleys', ['galleyLabel' => $galley->getGalleyLabel()])];
+						$confidTableRows[] = [$warningIconHtml . __('submission.status.unassigned'), __('plugins.pubIds.confid.editor.preview.galleys', ['galleyLabel' => $galley->getGalleyLabel()])];
 					}
 				}
 			}
@@ -386,7 +383,7 @@ class ConfIdPubIdPlugin extends PubIdPlugin {
 				}
 				$table .= '</tbody></table>';
 			}
-			$form->addField(new \PKP\components\forms\FieldHTML('confid', [
+			$form->addField(new FieldHTML('confid', [
 				'description' => $table,
 				'groupId' => 'default',
 			]));
