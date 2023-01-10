@@ -28,7 +28,7 @@
 			var $element = this.getHtmlElement(), pattern, $contentChoices;
 			if ($('[id^="confidSuffix"]').filter(':checked').val() == 'pattern') {
 				$contentChoices = $element.find(':checkbox');
-				pattern = new RegExp('enable(.*)ConfID');
+				pattern = new RegExp('enable(.*)Doi');
 				$contentChoices.each(function () {
 					var patternCheckResult = pattern.exec($(this).attr('name')),
 						$correspondingTextField = $element.find('[id*="' +

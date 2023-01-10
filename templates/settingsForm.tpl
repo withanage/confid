@@ -1,13 +1,4 @@
-{**
- * plugins/pubIds/confid/templates/settingsForm.tpl
- *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2003-2021 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
- *
- * CONFID plugin settings
- *
- *}
+
 
 <div id="description">{translate key="plugins.pubIds.confid.manager.settings.description"}</div>
 
@@ -26,8 +17,6 @@
     {fbvFormSection list="true"}
 		<p class="pkp_help">{translate key="plugins.pubIds.confid.manager.settings.explainDois"}</p>
     {fbvElement type="checkbox" id="enableIssueDoi" label="plugins.pubIds.confid.manager.settings.enableIssueDoi" maxlength="40" checked=$enableIssueDoi|compare:true}
-    {fbvElement type="checkbox" id="enablePublicationDoi" label="plugins.pubIds.confid.manager.settings.enablePublicationDoi" maxlength="40" checked=$enablePublicationDoi|compare:true}
-    {fbvElement type="checkbox" id="enableRepresentationDoi" label="plugins.pubIds.confid.manager.settings.enableRepresentationDoi" maxlength="40" checked=$enableRepresentationDoi|compare:true}
     {/fbvFormSection}
     {/fbvFormArea}
     {fbvFormArea id="confidPrefixFormArea" title="plugins.pubIds.confid.manager.settings.confidPrefix"}
@@ -54,14 +43,12 @@
     {fbvElement type="radio" id="confidSuffixPattern" name="confidSuffix" value="pattern" label="plugins.pubIds.confid.manager.settings.confidSuffixPattern" checked=$confidSuffix|compare:"pattern"}
 		<p class="pkp_help">{translate key="plugins.pubIds.confid.manager.settings.confidSuffixPattern.example"}</p>
     {fbvElement type="text" id="confidIssueSuffixPattern" value=$confidIssueSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.issues" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
-    {fbvElement type="text" id="confidPublicationSuffixPattern" value=$confidPublicationSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.submissions" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
-    {fbvElement type="text" id="confidRepresentationSuffixPattern" value=$confidRepresentationSuffixPattern label="plugins.pubIds.confid.manager.settings.confidSuffixPattern.representations" maxlength="40" inline=true size=$fbvStyles.size.MEDIUM}
     {/fbvFormSection}
     {/fbvFormArea}
     {fbvFormArea id="confidReassignFormArea" title="plugins.pubIds.confid.manager.settings.confidReassign"}
     {fbvFormSection}
 		<div class="instruct">{translate key="plugins.pubIds.confid.manager.settings.confidReassign.description"}</div>
-        {include file="linkAction/linkAction.tpl" action=$clearPubIdsLinkAction contextId="confidSettingsForm"}
+        {include file="linkAction/linkAction.tpl" action=$clearConfIdPubIdsLinkAction contextId="confidSettingsForm"}
     {/fbvFormSection}
     {/fbvFormArea}
     {if ($enableIssueDoi || $enablePublicationDoi || $enableRepresentationDoi) && $confidPrefix && $confidSuffix && $confidSuffix != 'customId' }

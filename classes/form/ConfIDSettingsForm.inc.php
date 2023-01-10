@@ -21,9 +21,7 @@ class ConfIDSettingsForm extends Form
 		parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
 
 		$form = $this;
-		$this->addCheck(new FormValidatorCustom($this, 'confidObjects', 'required', 'plugins.pubIds.confid.manager.settings.confidObjectsRequired', function ($enableIssueDoi) use ($form) {
-			return $form->getData('enableIssueDoi') || $form->getData('enablePublicationDoi') || $form->getData('enableRepresentationDoi');
-		}));
+
 		$this->addCheck(new FormValidatorRegExp($this, 'confidPrefix', 'required', 'plugins.pubIds.confid.manager.settings.confidPrefixPattern', '/^10\.[0-9]{4,7}$/'));
 		$this->addCheck(new FormValidatorPost($this));
 		$this->addCheck(new FormValidatorCSRF($this));
@@ -31,7 +29,7 @@ class ConfIDSettingsForm extends Form
 		// for CONFID reset requests
 		import('lib.pkp.classes.linkAction.request.RemoteActionConfirmationModal');
 		$request = Application::get()->getRequest();
-		$this->setData('clearPubIdsLinkAction', new LinkAction(
+		$this->setData('clearConfIdPubIdsLinkAction', new LinkAction(
 			'reassignConfIDs',
 			new RemoteActionConfirmationModal(
 				$request->getSession(),
@@ -64,10 +62,6 @@ class ConfIDSettingsForm extends Form
 	}
 
 
-	//
-	// Constructor
-	//
-
 	function initData()
 	{
 		$contextId = $this->_getContextId();
@@ -96,13 +90,10 @@ class ConfIDSettingsForm extends Form
 	{
 		return array(
 			'enableIssueDoi' => 'bool',
-			'enablePublicationDoi' => 'bool',
-			'enableRepresentationDoi' => 'bool',
 			'confidPrefix' => 'string',
-			'pubid::confid' => 'string',
-			'confidIssueSuffixPattern' => 'string',
-			'confidPublicationSuffixPattern' => 'string',
-			'confidRepresentationSuffixPattern' => 'string',
+			'confidSuffix' => 'string',
+			'confidIssueSuffixPattern' => 'string'
+
 		);
 	}
 
@@ -111,10 +102,6 @@ class ConfIDSettingsForm extends Form
 		$this->readUserVars(array_keys($this->_getFormFields()));
 	}
 
-
-	//
-	// Private helper methods
-	//
 
 	function execute(...$functionArgs)
 	{

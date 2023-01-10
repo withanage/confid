@@ -15,7 +15,6 @@ class ConfIdPubIdPlugin extends PubIdPlugin
 		$success = parent::register($category, $path, $mainContextId);
 		if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return $success;
 		if ($success && $this->getEnabled($mainContextId)) {
-			HookRegistry::register('CitationStyleLanguage::citation', array($this, 'getCitationData'));
 			HookRegistry::register('Publication::getProperties::summaryProperties', array($this, 'modifyObjectProperties'));
 			HookRegistry::register('Publication::getProperties::fullProperties', array($this, 'modifyObjectProperties'));
 			HookRegistry::register('Publication::validate', array($this, 'validatePublicationDoi'));
@@ -68,6 +67,12 @@ class ConfIdPubIdPlugin extends PubIdPlugin
 	{
 		return $this->getTemplateResource('confidAssign.tpl');
 	}
+
+	function getResolvingURL($contextId, $pubId)
+	{
+		return 'https://doi.org/' . $pubId;
+	}
+
 
 	function instantiateSettingsForm($contextId)
 	{
