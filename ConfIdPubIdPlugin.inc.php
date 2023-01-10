@@ -49,7 +49,7 @@ class ConfIdPubIdPlugin extends PubIdPlugin
 
 	function getPubIdDisplayType()
 	{
-		return 'ConfIdent';
+		return __('plugins.pubIds.confid.displayName');
 	}
 
 	function getPubIdFullName()
