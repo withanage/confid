@@ -11,6 +11,9 @@
 ## Demo
 - See plugin in action
 
-## For questionshttps://github.com/withanage/confid
-- Please file an issue
--
+## For questions
+
+- [Please file an issue](https://github.com/withanage/confid/issues/new)
+
+## Maintainer
+[Dulip Withanage](https://github.com/withanage/)   [TIB](https://tib.eu)
