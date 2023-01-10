@@ -1,7 +1,4 @@
 /**
- * @defgroup plugins_pubIds_confid_js
- */
-/**
  * @file plugins/pubIds/confid/js/ConfIdSettingsFormHandler.js
  *
  * Copyright (c) 2014-2021 Simon Fraser University
@@ -15,21 +12,13 @@
  */
 (function($) {
 
-	/** @type {Object} */
+
 	$.pkp.plugins.pubIds.confid =
 			$.pkp.plugins.pubIds.confid ||
 			{ js: { } };
 
 
 
-	/**
-	 * @constructor
-	 *
-	 * @extends $.pkp.controllers.form.AjaxFormHandler
-	 *
-	 * @param {jQueryObject} $form the wrapped HTML form element.
-	 * @param {Object} options form options.
-	 */
 	$.pkp.plugins.pubIds.confid.js.ConfIDSettingsFormHandler =
 			function($form, options) {
 
@@ -47,11 +36,6 @@
 			$.pkp.controllers.form.AjaxFormHandler);
 
 
-	/**
-	 * Callback to replace the element's content.
-	 *
-	 * @private
-	 */
 	$.pkp.plugins.pubIds.confid.js.ConfIDSettingsFormHandler.prototype.
 			updatePatternFormElementStatus_ =
 			function() {
@@ -94,5 +78,5 @@
 		}
 	};
 
-/** @param {jQuery} $ jQuery closure. */
+
 }(jQuery));

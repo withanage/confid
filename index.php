@@ -1,10 +1,6 @@
 <?php
 
 /**
- * @defgroup plugins_pubIds_confid CONFID Pub ID Plugin
- */
-
-/**
  * @file plugins/pubIds/confid/index.php
  *
  * Copyright (c) 2014-2021 Simon Fraser University

@@ -21,24 +21,16 @@ class ConfIDSettingsForm extends Form {
 	//
 	// Private properties
 	//
-	/** @var integer */
+
 	var $_contextId;
 
-	/**
-	 * Get the context ID.
-	 * @return integer
-	 */
 	function _getContextId() {
 		return $this->_contextId;
 	}
 
-	/** @var ConfIdPubIdPlugin */
+
 	var $_plugin;
 
-	/**
-	 * Get the plugin.
-	 * @return ConfIdPubIdPlugin
-	 */
 	function _getPlugin() {
 		return $this->_plugin;
 	}
@@ -47,11 +39,6 @@ class ConfIDSettingsForm extends Form {
 	//
 	// Constructor
 	//
-	/**
-	 * Constructor
-	 * @param $plugin ConfIdPubIdPlugin
-	 * @param $contextId integer
-	 */
 	function __construct($plugin, $contextId) {
 		$this->_contextId = $contextId;
 		$this->_plugin = $plugin;
@@ -63,20 +50,6 @@ class ConfIDSettingsForm extends Form {
 			return $form->getData('enableIssueDoi') || $form->getData('enablePublicationDoi') || $form->getData('enableRepresentationDoi');
 		}));
 		$this->addCheck(new FormValidatorRegExp($this, 'confidPrefix', 'required', 'plugins.pubIds.confid.manager.settings.confidPrefixPattern', '/^10\.[0-9]{4,7}$/'));
-		/**
-		$this->addCheck(new FormValidatorCustom($this, 'confidIssueSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.confidIssueSuffixPatternRequired', function($confidIssueSuffixPattern) use ($form) {
-			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enableIssueDoi')) return $confidIssueSuffixPattern != '';
-			return true;
-		}));
-		$this->addCheck(new FormValidatorCustom($this, 'confidPublicationSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.confidPublicationSuffixPatternRequired', function($confidPublicationSuffixPattern) use ($form) {
-			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enablePublicationDoi')) return $confidPublicationSuffixPattern != '';
-			return true;
-		}));
-		$this->addCheck(new FormValidatorCustom($this, 'confidRepresentationSuffixPattern', 'required', 'plugins.pubIds.confid.manager.settings.confidRepresentationSuffixPatternRequired', function($confidRepresentationSuffixPattern) use ($form) {
-			if ($form->getData('confidSuffix') == 'pattern' && $form->getData('enableRepresentationDoi')) return $confidRepresentationSuffixPattern != '';
-			return true;
-		}));
-		 **/
 		$this->addCheck(new FormValidatorPost($this));
 		$this->addCheck(new FormValidatorCSRF($this));
 
@@ -118,9 +91,6 @@ class ConfIDSettingsForm extends Form {
 	//
 	// Implement template methods from Form
 	//
-	/**
-	 * @copydoc Form::initData()
-	 */
 	function initData() {
 		$contextId = $this->_getContextId();
 		$plugin = $this->_getPlugin();
@@ -129,16 +99,10 @@ class ConfIDSettingsForm extends Form {
 		}
 	}
 
-	/**
-	 * @copydoc Form::readInputData()
-	 */
 	function readInputData() {
 		$this->readUserVars(array_keys($this->_getFormFields()));
 	}
 
-	/**
-	 * @copydoc Form::execute()
-	 */
 	function execute(...$functionArgs) {
 		$plugin = $this->_getPlugin();
 		$contextId = $this->_getContextId();
