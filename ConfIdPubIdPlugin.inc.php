@@ -50,7 +50,7 @@ class ConfIdPubIdPlugin extends PubIdPlugin
 
 	function getPubIdDisplayType()
 	{
-		return 'CONFID';
+		return 'ConfIdent';
 	}
 
 	function getPubIdFullName()
@@ -58,18 +58,6 @@ class ConfIdPubIdPlugin extends PubIdPlugin
 		return 'Digital Object Identifier';
 	}
 
-	function getResolvingURL($contextId, $pubId)
-	{
-		return 'https://confid.org/' . $this->_confidURLEncode($pubId);
-	}
-
-	function _confidURLEncode($pubId)
-	{
-		$search = array('%', '"', '#', ' ', '<', '>', '{');
-		$replace = array('%25', '%22', '%23', '%20', '%3c', '%3e', '%7b');
-		$pubId = str_replace($search, $replace, $pubId);
-		return $pubId;
-	}
 
 	function getPubIdMetadataFile()
 	{

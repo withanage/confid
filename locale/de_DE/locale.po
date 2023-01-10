@@ -15,25 +15,25 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 
 msgid "plugins.pubIds.confid.displayName"
-msgstr "CONFID"
+msgstr "Conference  Identifier"
 
 msgid "plugins.pubIds.confid.description"
 msgstr "Dieses Plugin ermöglicht die Zuweisung von ConfIDs (persistent identifiers) zu Ausgaben, Artikeln und Fahnen in OJS."
 
 msgid "plugins.pubIds.confid.readerDisplayName"
-msgstr "CONFID"
+msgstr "Conference  Identifier"
 
 msgid "plugins.pubIds.confid.manager.settings.description"
-msgstr "Bitte konfigurieren Sie das CONFID-Plugin, damit Sie CONFID in OJS verwalten und benutzen können:"
+msgstr "Bitte konfigurieren Sie das Conference  Identifier-Plugin, damit Sie Conference  Identifier in OJS verwalten und benutzen können:"
 
 msgid "plugins.pubIds.confid.manager.settings.confidObjects"
 msgstr "Zeitschrifteninhalt"
 
 msgid "plugins.pubIds.confid.manager.settings.confidObjectsRequired"
-msgstr "Bitte wählen Sie, welchen Objekten CONFID zugewiesen werden sollen."
+msgstr "Bitte wählen Sie, welchen Objekten Conference  Identifier zugewiesen werden sollen."
 
 msgid "plugins.pubIds.confid.manager.settings.explainDois"
-msgstr "Bitte wählen Sie die Publikationsobjekte, denen Digital Object Identifiers (CONFID) zugewiesen werden:"
+msgstr "Bitte wählen Sie die Publikationsobjekte, denen Digital Object Identifiers (Conference  Identifier) zugewiesen werden:"
 
 msgid "plugins.pubIds.confid.manager.settings.enableIssueDoi"
 msgstr "Ausgaben"
@@ -45,25 +45,25 @@ msgid "plugins.pubIds.confid.manager.settings.enableRepresentationDoi"
 msgstr "Fahnen"
 
 msgid "plugins.pubIds.confid.manager.settings.confidPrefix"
-msgstr "CONFID-Präfix"
+msgstr "Conference  Identifier-Präfix"
 
 msgid "plugins.pubIds.confid.manager.settings.confidPrefix.description"
-msgstr "Der CONFID-Präfix wird von Registrierungsagenturen (z.B. <a href=\"https://projects.tib.eu/confident/\" target=\"_new\">ConfIdent</a>) vergeben und hat das Format 10.xxxx (z.B. 10.1234):"
+msgstr "Der Conference  Identifier-Präfix wird von Registrierungsagenturen (z.B. <a href=\"https://projects.tib.eu/confident/\" target=\"_new\">ConfIdent</a>) vergeben und hat das Format 10.xxxx (z.B. 10.1234):"
 
 msgid "plugins.pubIds.confid.manager.settings.confidPrefixPattern"
-msgstr "Der CONFID-Präfix ist verpflichtend und muss im Format 10.xxxx angegeben werden."
+msgstr "Der Conference  Identifier-Präfix ist verpflichtend und muss im Format 10.xxxx angegeben werden."
 
 msgid "plugins.pubIds.confid.manager.settings.confidSuffix"
-msgstr "CONFID-Suffix"
+msgstr "Conference  Identifier-Suffix"
 
 msgid "plugins.pubIds.confid.manager.settings.confidSuffix.description"
-msgstr "Ein CONFID-Suffix kann in beliebiger Form sein, muss aber eindeutig unter allen Publikationsobjekten, denen derselbe CONFID-Präfix zugewiesen wird:"
+msgstr "Ein Conference  Identifier-Suffix kann in beliebiger Form sein, muss aber eindeutig unter allen Publikationsobjekten, denen derselbe Conference  Identifier-Präfix zugewiesen wird:"
 
 msgid "plugins.pubIds.confid.manager.settings.confidSuffixPattern"
-msgstr "Verwenden Sie das unten angegebene Muster, um CONFID-Suffixe zu erzeugen. Nutzen Sie %j für die Initialen der Zeitschrift, %v für die Nummer des Jahrgangs, %i für die Nummer der Ausgabe, %Y für das Jahr, %a für die OJS-Artikel-ID, %g für die OJS-Fahnen-ID, %f für die OJS-Datei-ID, %p für die Seitenzahl und %x für die \"benutzerdefinierte Kennung\" (muss in Schritt 4.3 der Zeitschrifteneinrichtung aktiviert werden)."
+msgstr "Verwenden Sie das unten angegebene Muster, um Conference  Identifier-Suffixe zu erzeugen. Nutzen Sie %j für die Initialen der Zeitschrift, %v für die Nummer des Jahrgangs, %i für die Nummer der Ausgabe, %Y für das Jahr, %a für die OJS-Artikel-ID, %g für die OJS-Fahnen-ID, %f für die OJS-Datei-ID, %p für die Seitenzahl und %x für die \"benutzerdefinierte Kennung\" (muss in Schritt 4.3 der Zeitschrifteneinrichtung aktiviert werden)."
 
 msgid "plugins.pubIds.confid.manager.settings.confidSuffixPattern.example"
-msgstr "vol%viss%ipp%p würde z.B. einen CONFID 10.1234/vol3iss2pp230 erzeugen."
+msgstr "vol%viss%ipp%p würde z.B. einen Conference  Identifier 10.1234/vol3iss2pp230 erzeugen."
 
 msgid "plugins.pubIds.confid.manager.settings.confidSuffixPattern.issues"
 msgstr "für Ausgaben"
@@ -81,37 +81,37 @@ msgid "plugins.pubIds.confid.manager.settings.confidSuffixDefault.description"
 msgstr "%j.v%vi%i für Ausgaben<br />%j.v%vi%i.%a für Artikel<br />%j.v%vi%i.%a.g%g für Fahnen."
 
 msgid "plugins.pubIds.confid.manager.settings.confidSuffixCustomIdentifier"
-msgstr "Geben Sie einen individuellen CONFID-Suffix für jedes publizierte Element ein. Sie finden ein zusätzliches CONFID-Eingabefeld auf der Metadatenseite jedes Elements."
+msgstr "Geben Sie einen individuellen Conference  Identifier-Suffix für jedes publizierte Element ein. Sie finden ein zusätzliches Conference  Identifier-Eingabefeld auf der Metadatenseite jedes Elements."
 
 msgid "plugins.pubIds.confid.manager.settings.confidIssueSuffixPatternRequired"
-msgstr "Bitte geben Sie das CONFID-Suffix-Muster für Ausgaben ein."
+msgstr "Bitte geben Sie das Conference  Identifier-Suffix-Muster für Ausgaben ein."
 
 msgid "plugins.pubIds.confid.manager.settings.confidSubmissionSuffixPatternRequired"
-msgstr "Bitte geben Sie das CONFID-Suffix-Muster für Artikel ein."
+msgstr "Bitte geben Sie das Conference  Identifier-Suffix-Muster für Artikel ein."
 
 msgid "plugins.pubIds.confid.manager.settings.confidRepresentationSuffixPatternRequired"
-msgstr "Bitte geben Sie das CONFID-Suffix-Muster für Fahnen ein."
+msgstr "Bitte geben Sie das Conference  Identifier-Suffix-Muster für Fahnen ein."
 
 msgid "plugins.pubIds.confid.manager.settings.confidReassign"
-msgstr "CONFID neu zuweisen"
+msgstr "Conference  Identifier neu zuweisen"
 
 msgid "plugins.pubIds.confid.manager.settings.confidReassign.description"
-msgstr "Wenn Sie Ihre CONFID-Konfiguration ändern, sind bereits vergebene CONFID nicht betroffen. Sobald die CONFID-Konfiguration gespeichert wird, nutzen Sie diesen Knopf, um alle existierenden CONFID zu löschen, so dass die neuen Einstellungen auch bereits existierende Objekte mit betreffen."
+msgstr "Wenn Sie Ihre Conference  Identifier-Konfiguration ändern, sind bereits vergebene Conference  Identifier nicht betroffen. Sobald die Conference  Identifier-Konfiguration gespeichert wird, nutzen Sie diesen Knopf, um alle existierenden Conference  Identifier zu löschen, so dass die neuen Einstellungen auch bereits existierende Objekte mit betreffen."
 
 msgid "plugins.pubIds.confid.manager.settings.confidReassign.confirm"
-msgstr "Sind Sie sicher, dass Sie alle existierenden CONFID löschen möchten?"
+msgstr "Sind Sie sicher, dass Sie alle existierenden Conference  Identifier löschen möchten?"
 
 msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide"
-msgstr "CONFID zuweisen"
+msgstr "Conference  Identifier zuweisen"
 
 msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide.description"
-msgstr "ConfIDs an alle Journalobjekte zuweisen, denen bisher noch keine CONFID zugewiesen waren. Diese Aktion kann nicht mit einer individuellen Suffix-Konfiguration genutzt werden. Wenn Sie oben die CONFID-Konfiguration verändert haben, speichern Sie bitte Ihre Änderungen, bevor Sie diese Aktion ausführen. CONFID zuzuweisen kann eine Weile dauern, abhängig von der Anzahl im Journal publizierter Objekte."
+msgstr "ConfIDs an alle Journalobjekte zuweisen, denen bisher noch keine Conference  Identifier zugewiesen waren. Diese Aktion kann nicht mit einer individuellen Suffix-Konfiguration genutzt werden. Wenn Sie oben die Conference  Identifier-Konfiguration verändert haben, speichern Sie bitte Ihre Änderungen, bevor Sie diese Aktion ausführen. Conference  Identifier zuzuweisen kann eine Weile dauern, abhängig von der Anzahl im Journal publizierter Objekte."
 
 msgid "plugins.pubIds.confid.manager.settings.confidAssignJournalWide.confirm"
-msgstr "Sind Sie sicher, dass Sie allen veröffentlichten Objekten einen CONFID zuweisen möchten, die bisher noch keine CONFID zugewiesen bekommen haben?"
+msgstr "Sind Sie sicher, dass Sie allen veröffentlichten Objekten einen Conference  Identifier zuweisen möchten, die bisher noch keine Conference  Identifier zugewiesen bekommen haben?"
 
 msgid "plugins.pubIds.confid.editor.confid"
-msgstr "CONFID"
+msgstr "Conference  Identifier"
 
 msgid "plugins.pubIds.confid.editor.confidObjectTypeIssue"
 msgstr "Ausgabe"
@@ -123,46 +123,46 @@ msgid "plugins.pubIds.confid.editor.confidObjectTypeRepresentation"
 msgstr "Fahne"
 
 msgid "plugins.pubIds.confid.editor.customSuffixMissing"
-msgstr "Es kann kein CONFID zugewiesen werden, weil der angepasste Suffix fehlt."
+msgstr "Es kann kein Conference  Identifier zugewiesen werden, weil der angepasste Suffix fehlt."
 
 msgid "plugins.pubIds.confid.editor.patternNotResolved"
-msgstr "Es kann kein CONFID zugewiesen werden, weil ein ungültiges Muster verwendet wird."
+msgstr "Es kann kein Conference  Identifier zugewiesen werden, weil ein ungültiges Muster verwendet wird."
 
 msgid "plugins.pubIds.confid.editor.canBeAssigned"
-msgstr "Sie sehen eine Voransicht des CONFID. Wählen Sie die Checkbox und speichern Sie das Formular, um den CONFID zuzuweisen."
+msgstr "Sie sehen eine Voransicht des Conference  Identifier. Wählen Sie die Checkbox und speichern Sie das Formular, um den Conference  Identifier zuzuweisen."
 
 msgid "plugins.pubIds.confid.editor.assigned"
-msgstr "Der CONFID ist diesem Objekt vom Typ {$pubObjectType} zugewiesen."
+msgstr "Der Conference  Identifier ist diesem Objekt vom Typ {$pubObjectType} zugewiesen."
 
 msgid "plugins.pubIds.confid.editor.confidSuffixCustomIdentifierNotUnique"
-msgstr "Der angegebene CONFID-Suffix wird bereits für ein anderes veröffentlichtes Element benutzt. Bitte vergeben Sie einen eindeutigen CONFID-Suffix für jedes Element."
+msgstr "Der angegebene Conference  Identifier-Suffix wird bereits für ein anderes veröffentlichtes Element benutzt. Bitte vergeben Sie einen eindeutigen Conference  Identifier-Suffix für jedes Element."
 
 msgid "plugins.pubIds.confid.editor.clearObjectsDoi"
-msgstr "CONFID entfernen"
+msgstr "Conference  Identifier entfernen"
 
 msgid "plugins.pubIds.confid.editor.clearObjectsDoi.confirm"
-msgstr "Sind Sie sicher, dass Sie den existierenden CONFID entfernen möchten?"
+msgstr "Sind Sie sicher, dass Sie den existierenden Conference  Identifier entfernen möchten?"
 
 msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId"
-msgstr "CONFID für die Objekte der Ausgabe entfernen"
+msgstr "Conference  Identifier für die Objekte der Ausgabe entfernen"
 
 msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId.confirm"
-msgstr "Sind Sie sicher, dass Sie die CONFID der existierenden Objekte der Ausgabe entfernen möchten?"
+msgstr "Sind Sie sicher, dass Sie die Conference  Identifier der existierenden Objekte der Ausgabe entfernen möchten?"
 
 msgid "plugins.pubIds.confid.editor.clearIssueObjectsConfId.description"
-msgstr "Nutzen Sie die folgende Option, um die CONFID aller Objekte (Artikel und Fahnen), die momentan dieser Ausgabe zugeordnet sind, zu entfernen."
+msgstr "Nutzen Sie die folgende Option, um die Conference  Identifier aller Objekte (Artikel und Fahnen), die momentan dieser Ausgabe zugeordnet sind, zu entfernen."
 
 msgid "plugins.pubIds.confid.editor.assignDoi"
-msgstr "CONFID {$pubId} zu diesem Objekt vom Typ {$pubObjectType} zuweisen"
+msgstr "Conference  Identifier {$pubId} zu diesem Objekt vom Typ {$pubObjectType} zuweisen"
 
 msgid "plugins.pubIds.confid.editor.assignDoi.emptySuffix"
-msgstr "Es kann kein CONFID zugewiesen werden, weil der angepasste Suffix fehlt."
+msgstr "Es kann kein Conference  Identifier zugewiesen werden, weil der angepasste Suffix fehlt."
 
 msgid "plugins.pubIds.confid.editor.assignDoi.pattern"
-msgstr "CONFID {$pubId} kann nicht zugewiesen werden, weil ein ungültiges Muster verwendet wird."
+msgstr "Conference  Identifier {$pubId} kann nicht zugewiesen werden, weil ein ungültiges Muster verwendet wird."
 
 msgid "plugins.pubIds.confid.editor.assignDoi.assigned"
-msgstr "CONFID {$pubId} wurde zugewiesen."
+msgstr "Conference  Identifier {$pubId} wurde zugewiesen."
 
 msgid "plugins.pubIds.confid.editor.preview.objects"
 msgstr "Element"
@@ -171,27 +171,27 @@ msgid "plugins.pubIds.confid.editor.preview.galleys"
 msgstr "Fahne: {$galleyLabel}"
 
 msgid "plugins.pubIds.confid.editor.preview.publication.none"
-msgstr "Dieser Publikation wurde keine CONFID zugeordnet."
+msgstr "Dieser Publikation wurde keine Conference  Identifier zugeordnet."
 
 msgid "plugins.pubIds.confid.editor.preview.publication"
-msgstr "Die CONFID für diese Veröffentlichung wird {$confid} sein."
+msgstr "Die Conference  Identifier für diese Veröffentlichung wird {$confid} sein."
 
 msgid "plugins.pubIds.confid.editor.missingPrefix"
-msgstr "Die CONFID muss mit {$confidprefix} beginnen."
+msgstr "Die Conference  Identifier muss mit {$confidprefix} beginnen."
 
 msgid "plugins.pubIds.confid.editor.missingParts"
 msgstr ""
-"Sie können keine CONFID generieren, denn einem oder mehreren Teilen der URN "
+"Sie können keine Conference  Identifier generieren, denn einem oder mehreren Teilen der URN "
 "fehlen Daten. Sie müssen die Veröffentlichung einer Ausgabe zuweisen, eine "
 "Verlags ID angeben oder Seitenzahlen eintragen."
 
 msgid "plugins.pubIds.confid.editor.missingIssue"
 msgstr ""
-"Sie können keine CONFID generieren, solange der Beitrag keiner Ausgabe "
+"Sie können keine Conference  Identifier generieren, solange der Beitrag keiner Ausgabe "
 "zugewiesen ist."
 
 msgid "plugins.pubIds.confid.editor.confid.assignDoi"
 msgstr "Zuweisen"
 
 msgid "plugins.pubIds.confid.editor.confid.description"
-msgstr "Die CONFID muss mit {$prefix} beginnen."
+msgstr "Die Conference  Identifier muss mit {$prefix} beginnen."
