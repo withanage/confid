@@ -10,9 +10,7 @@
  -
 
 #### Demo
-- [Configure Plugin and Insert a Conference Identifier](https://user-images.githubusercontent.com/1921992/212025313-dd5f31b1-86d0-49c0-a1ee-3187949deb5b.mp4
-
-)
+- [Configure Plugin and Insert a Conference Identifier](https://user-images.githubusercontent.com/1921992/212025313-dd5f31b1-86d0-49c0-a1ee-3187949deb5b.mp4)
 
 #### For questions
 
